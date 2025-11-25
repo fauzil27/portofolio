@@ -4,6 +4,8 @@ import {
   Geist_Mono,
   Righteous,
   Playfair_Display,
+  Roboto_Mono,
+  Georama,
 } from "next/font/google";
 import "./globals.css";
 
@@ -23,8 +25,19 @@ const righteous = Righteous({
   subsets: ["latin"],
 });
 
+const georama = Georama({
+  variable: "--font-georama",
+  subsets: ["latin"],
+});
+
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair-display",
+  weight: ["400", "700"],
+  subsets: ["latin"],
+});
+
+const robotoMono = Roboto_Mono({
+  variable: "--font-roboto-mono",
   weight: ["400", "700"],
   subsets: ["latin"],
 });
@@ -57,7 +70,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${righteous.variable} ${playfairDisplay.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${righteous.variable} ${playfairDisplay.variable} ${robotoMono.variable} ${georama.variable} antialiased`}
       >
         {children}
       </body>

@@ -28,6 +28,7 @@ const righteous = Righteous({
 const georama = Georama({
   variable: "--font-georama",
   subsets: ["latin"],
+  style: ["normal", "italic"],
 });
 
 const playfairDisplay = Playfair_Display({

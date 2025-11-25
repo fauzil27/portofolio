@@ -134,20 +134,20 @@ const photosLinks = [
 const gallery = [
   {
     id: 1,
-    img: "/images/adhim.png",
+    img: "/images/kuceng.jpeg",
   },
   {
     id: 2,
-    img: "/images/adhim.png",
+    img: "/images/illustration.png",
   },
-  {
-    id: 3,
-    img: "/images/adhim.png",
-  },
-  {
-    id: 4,
-    img: "/images/adhim.png",
-  },
+  // {
+  //   id: 3,
+  //   img: "/images/adhim.png",
+  // },
+  // {
+  //   id: 2,
+  //   img: "/images/adhim.png",
+  // },
 ];
 
 const INITIAL_Z_INDEX = 1000;
@@ -399,31 +399,31 @@ const ABOUT_LOCATION = {
       position: "top-10 left-5",
       imageUrl: "/images/adhim.png",
     },
+    // {
+    //   id: 2,
+    //   name: "casual-me.png",
+    //   icon: "/images/image.png",
+    //   kind: "file",
+    //   fileType: "img",
+    //   position: "top-28 right-72",
+    //   imageUrl: "/images/adhim.png",
+    // },
+    // {
+    //   id: 3,
+    //   name: "conference-me.png",
+    //   icon: "/images/image.png",
+    //   kind: "file",
+    //   fileType: "img",
+    //   position: "top-52 left-80",
+    //   imageUrl: "/images/adhim.png",
+    // },
     {
       id: 2,
-      name: "casual-me.png",
-      icon: "/images/image.png",
-      kind: "file",
-      fileType: "img",
-      position: "top-28 right-72",
-      imageUrl: "/images/adhim.png",
-    },
-    {
-      id: 3,
-      name: "conference-me.png",
-      icon: "/images/image.png",
-      kind: "file",
-      fileType: "img",
-      position: "top-52 left-80",
-      imageUrl: "/images/adhim.png",
-    },
-    {
-      id: 4,
       name: "about-me.txt",
       icon: "/images/txt.png",
       kind: "file",
       fileType: "txt",
-      position: "top-60 left-5",
+      position: "top-60 left-40",
       subtitle: "Fauzil Adhim",
       image: "/images/adhim.png",
       description: [

@@ -48,10 +48,10 @@ const Safari = () => {
         </div>
       </div>
       <div className="blog">
-        <h2>My Developer Blog</h2>
+        {/* <h2>My Developer Blog</h2> */}
 
         <div className="space-y-8">
-          <div className="text-center text-gray-500 font-bold text-2xl">
+          <div className="flex items-center justify-center h-[300px] text-gray-500 font-bold text-2xl">
             COMING SOON
           </div>
           {/* {blogPosts.map((post) => (
@@ -84,3 +84,24 @@ const Safari = () => {
 const SafariWindow = WindowWrapper(Safari, "safari");
 
 export default SafariWindow;
+
+interface SpotifyEmbedProps {
+  url: string; // contoh: https://open.spotify.com/track/xxxxxx
+}
+
+const SpotifyEmbed = ({ url }: SpotifyEmbedProps) => {
+  const embedUrl = url.replace("open.spotify.com", "open.spotify.com/embed");
+
+  return (
+    <div className="w-full h-[380px]">
+      <iframe
+        src={embedUrl}
+        width="100%"
+        height="100%"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+        className="rounded-lg"
+      ></iframe>
+    </div>
+  );
+};

@@ -43,7 +43,12 @@ const WindowWrapper = (Component: React.FC, windowKey: string) => {
     }, [isOpen]);
 
     return (
-      <section id={windowKey} ref={ref} style={{ zIndex }} className="absolute">
+      <section
+        id={windowKey}
+        ref={ref}
+        style={{ zIndex }}
+        className="absolute hidden"
+      >
         <Component {...props} />
       </section>
     );

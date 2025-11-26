@@ -3,9 +3,11 @@ import Image from "next/image";
 import { navIcons, navLinks } from "@/app/constant/portofolio/data";
 import moment from "moment";
 import useWindowStore from "@/app/store/Window";
+import useTrackVisitor from "@/app/hooks/useTrackVisitor";
 
 export default function NavBar() {
   const { openWindow } = useWindowStore();
+  const {} = useTrackVisitor();
   return (
     <nav>
       <div>

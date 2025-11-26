@@ -8,6 +8,7 @@ import {
   Georama,
 } from "next/font/google";
 import "./globals.css";
+import Provider from "./provider/Provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -73,7 +74,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${righteous.variable} ${playfairDisplay.variable} ${robotoMono.variable} ${georama.variable} antialiased`}
       >
-        {children}
+        <Provider>{children}</Provider>
       </body>
     </html>
   );

@@ -25,8 +25,9 @@ const Resume = () => {
         </a>
       </div>
 
-      <Document file="/files/Resume.pdf">
+      <Document file="/files/Resume.pdf" className="w-full flex">
         <Page pageNumber={1} renderTextLayer renderAnnotationLayer />
+        <Page pageNumber={2} renderTextLayer renderAnnotationLayer />
       </Document>
     </>
   );

@@ -10,7 +10,7 @@ export default function NavBar() {
     <nav>
       <div>
         <Image src="/images/logo.svg" alt="Logo" width={40} height={40} />
-        <p className="font-bold">AdhimCodes Portfolio</p>
+        <p className="font-bold">Adhim&apos;s Portfolio</p>
 
         <ul>
           {navLinks.map((link) => (

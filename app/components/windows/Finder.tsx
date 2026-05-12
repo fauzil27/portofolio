@@ -58,15 +58,23 @@ const Finder = () => {
           <div>{renderList("Favorites", Object.values(locations))}</div>
           <div>{renderList("My Projects", locations.work.children)}</div>
         </div>
-        <ul className="content">
+        <ul className="content grid grid-cols-4 content-start gap-8 overflow-y-auto p-8">
           {activeLocation?.children?.map((item: any) => (
             <li
               key={item.id}
-              className={item.position}
+              className="flex flex-col items-center gap-2 cursor-pointer group"
               onClick={() => openItem(item)}
             >
-              <Image src={item.icon} alt={item.name} width={16} height={16} />
-              <p>{item.name}</p>
+              <Image
+                src={item.icon}
+                alt={item.name}
+                width={64}
+                height={64}
+                className="transition-transform group-hover:scale-110"
+              />
+              <p className="text-sm text-center font-medium wrap-break-word w-full">
+                {item.name}
+              </p>
             </li>
           ))}
         </ul>

@@ -5,6 +5,7 @@ import { create } from "zustand";
 
 export interface WindowItem {
   isOpen: boolean;
+  isMaximized: boolean;
   zIndex: number;
   data: any | null;
 }
@@ -20,6 +21,8 @@ export interface WindowStore {
   openWindow: (windowKey: string, data?: any | null) => void;
   closeWindow: (windowKey: string) => void;
   focusWindow: (windowKey: string) => void;
+  maximizeWindow: (windowKey: string) => void;
+  minimizeWindow: (windowKey: string) => void;
 }
 
 const useWindowStore = create<WindowStore>()(
@@ -42,6 +45,7 @@ const useWindowStore = create<WindowStore>()(
         const win = state.windows[windowKey];
         if (!win) return;
         win.isOpen = false;
+        win.isMaximized = false;
         win.zIndex = INITIAL_Z_INDEX;
         win.data = null;
       }),
@@ -50,6 +54,20 @@ const useWindowStore = create<WindowStore>()(
       set((state) => {
         const win = state.windows[windowKey];
         win.zIndex = state.nextZIndex;
+      }),
+
+    maximizeWindow: (windowKey) =>
+      set((state) => {
+        const win = state.windows[windowKey];
+        if (!win) return;
+        win.isMaximized = true;
+      }),
+
+    minimizeWindow: (windowKey) =>
+      set((state) => {
+        const win = state.windows[windowKey];
+        if (!win) return;
+        win.isMaximized = false;
       }),
   }))
 );

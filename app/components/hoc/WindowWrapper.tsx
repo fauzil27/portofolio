@@ -8,8 +8,27 @@ import { Draggable } from "gsap/Draggable";
 const WindowWrapper = (Component: React.FC, windowKey: string) => {
   const Wrapped = (props: any) => {
     const { windows, focusWindow } = useWindowStore();
-    const { zIndex, isOpen } = windows[windowKey];
+    const { zIndex, isOpen, isMaximized } = windows[windowKey];
     const ref = useRef<HTMLDivElement>(null);
+
+    useGSAP(() => {
+      const el = ref.current;
+      if (!el || !isOpen) return;
+
+      if (isMaximized) {
+        gsap.to(el, {
+          scale: 1.6,
+          duration: 0.4,
+          ease: "back.out(1.7)",
+        });
+      } else {
+        gsap.to(el, {
+          scale: 1,
+          duration: 0.4,
+          ease: "back.out(1.7)",
+        });
+      }
+    }, [isMaximized]);
 
     useGSAP(() => {
       const el = ref.current;
@@ -20,7 +39,13 @@ const WindowWrapper = (Component: React.FC, windowKey: string) => {
       gsap.fromTo(
         el,
         { scale: 0.8, opacity: 0, y: 40 },
-        { scale: 1, opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }
+        {
+          scale: isMaximized ? 1.4 : 1,
+          opacity: 1,
+          y: 0,
+          duration: 0.4,
+          ease: "power3.out",
+        },
       );
     }, [isOpen]);
 

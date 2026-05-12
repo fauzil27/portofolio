@@ -27,8 +27,9 @@ body {
   background: var(--background);
   color: var(--foreground);
   background-image: url("/images/wallpaper.png");
-  font-family: Arial, Helvetica, sans-serif, var(--font-georama),
-    var(--font-roboto-mono), var(--font-righteous), var(--font-playfair-display);
+  font-family:
+    Arial, Helvetica, sans-serif, var(--font-georama), var(--font-roboto-mono),
+    var(--font-righteous), var(--font-playfair-display);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -114,7 +115,7 @@ body {
     }
 
     .tooltip {
-      @apply !py-1 !px-3 !w-fit !text-center !text-xs !rounded-md !bg-blue-200 !text-blue-900 !shadow-2xl;
+      @apply py-1! px-3! w-fit! text-center! text-xs! rounded-md! bg-blue-200! text-blue-900! shadow-2xl!;
     }
 
     .dock-icon {
@@ -134,11 +135,11 @@ body {
     }
 
     .minimize {
-      @apply size-3.5 rounded-full bg-[#ffc030];
+      @apply size-3.5 rounded-full bg-[#ffc030] cursor-pointer;
     }
 
     .maximize {
-      @apply size-3.5 rounded-full bg-[#2acb42];
+      @apply size-3.5 rounded-full bg-[#2acb42] cursor-pointer;
     }
   }
 
@@ -362,17 +363,17 @@ body {
     }
 
     .content {
-      @apply flex-1 p-8 bg-white max-w-2xl relative;
+      @apply flex-1 p-8 bg-white max-w-2xl overflow-y-auto;
 
       li {
-        @apply absolute flex items-center flex-col gap-3;
+        @apply flex items-center flex-col gap-3 cursor-pointer;
 
         img {
-          @apply object-contain object-center size-16 relative group-hover:scale-105;
+          @apply object-contain object-center size-16 group-hover:scale-105 transition-transform;
         }
 
         p {
-          @apply text-sm text-center font-medium w-40;
+          @apply text-sm text-center font-medium;
         }
       }
     }
